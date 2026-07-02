@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Rijal — Creative Portfolio & Design Log</title>
+    <style>
+        /* High-Depth Reset & Heavy Studio Palette Matrix */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-canvas: #e6e5e1;       /* Industrial concrete light grey */
+            --bg-container: #f2f1ed;    /* Heavy record sleeve off-white */
+            --bg-tactical: #2c302d;     /* Deep studio olive green / dark slate */
+            --text-solid: #161716;      /* Matte vinyl black */
+            --accent-umber: #6b4a31;    /* Vintage guitar body brown */
+            --accent-tan: #997a62;      /* Raw fretboard tan */
+            --border-heavy: #161716;    /* Strict high-contrast structural outline */
+            --shadow-brutal: 8px 8px 0px #161716; /* Heavy depth offset shadow */
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--text-solid);
+            font-family: 'Georgia', serif;
+            font-weight: bold; 
+            line-height: 1.65;
+            padding: 0;
+        }
+
+        /* Typography Structural Blocks */
+        h1, h2, h3, h4, .brand-logo, .stamp-id, .btn-action {
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+
+        /* Dual-Line Tactical Header Navigation */
+        header {
+            background-color: var(--bg-container);
+            border-bottom: 5px double var(--border-heavy);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            color: var(--text-solid);
+            text-decoration: none;
+            border: 3px solid var(--border-heavy);
+            padding: 0.4rem 1rem;
+            background-color: var(--bg-canvas);
+            box-shadow: 4px 4px 0px var(--border-heavy);
+        }
+
+        .brand-logo span {
+            color: var(--accent-umber);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-solid);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: transform 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-umber);
+        }
+
+        /* Master Framework Containers */
+        .master-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .stamp-id {
+            font-size: 0.75rem;
+            color: var(--accent-umber);
+            letter-spacing: 4px;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        /* Staggered Editorial Hero Block */
+        .editorial-hero {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 5rem;
+            align-items: center;
+            background-color: var(--bg-container);
+            border: 3px solid var(--border-heavy);
+            padding: 3.5rem;
+            box-shadow: var(--shadow-brutal);
+            margin-bottom: 7rem;
+        }
+
+        .hero-image-frame {
+            border: 3px solid var(--border-heavy);
+            box-shadow: 5px 5px 0px var(--accent-umber);
+            background: #ffffff;
+            padding: 1.2rem;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 490px;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.1) sepia(0.05);
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid var(--border-heavy);
+            padding-bottom: 1.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Industrial Section Headline Dividers */
+        .section-headline {
+            font-size: 1.8rem;
+            margin-bottom: 4.5rem;
+            background: var(--text-solid);
+            color: var(--bg-canvas);
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            box-shadow: var(--shadow-brutal);
+        }
+
+        /* Staggered Content Architecture Rows */
+        .asymmetric-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 7rem;
+        }
+
+        .asymmetric-row.flipped {
+            direction: rtl;
+        }
+        
+        .asymmetric-row.flipped .row-text-packet {
+            direction: ltr;
+        }
+
+        .row-media-box {
+            background-color: var(--bg-container);
+            border: 3px solid var(--border-heavy);
+            padding: 1.8rem;
+            box-shadow: var(--shadow-brutal);
+        }
+
+        .row-media-box img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .row-text-packet h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-solid);
+        }
+
+        .row-text-packet p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        /* Heavy Matte Tactical Manifesto Block */
+        .tactical-manifesto {
+            background: var(--bg-tactical);
+            color: var(--bg-container);
+            border: 3px solid var(--border-heavy);
+            padding: 4rem;
+            margin-bottom: 7rem;
+            box-shadow: var(--shadow-brutal);
+        }
+
+        .tactical-manifesto blockquote {
+            font-size: 1.6rem;
+            font-style: italic;
+            border-left: 6px solid var(--accent-tan);
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Blueprint Tracks Engine Box */
+        .audio-blueprint-box {
+            background: var(--bg-container);
+            border: 3px solid var(--border-heavy);
+            padding: 3rem;
+            box-shadow: var(--shadow-brutal);
+            margin-bottom: 7rem;
+        }
+
+        .blueprint-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px dotted var(--border-heavy);
+            padding: 1.2rem 0;
+        }
+
+        .blueprint-item:last-child {
+            border-bottom: none;
+        }
+
+        .blueprint-title {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .blueprint-label-tag {
+            font-family: monospace;
+            font-size: 0.85rem;
+            background: var(--bg-canvas);
+            padding: 0.3rem 0.8rem;
+            border: 2px solid var(--border-heavy);
+        }
+
+        /* Heavy Action Buttons */
+        .btn-action {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-solid);
+            font-size: 0.9rem;
+            padding: 0.9rem 2rem;
+            border: 3px solid var(--border-heavy);
+            background-color: var(--bg-canvas);
+            box-shadow: 5px 5px 0px var(--border-heavy);
+            transition: all 0.1s ease;
+        }
+
+        .btn-action:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px var(--border-heavy);
+            background-color: var(--accent-tan);
+            color: white;
+        }
+
+        /* Monolithic Contact Terminal Frame */
+        .transmission-monolith {
+            background-color: var(--bg-container);
+            border: 3px solid var(--border-heavy);
+            padding: 6rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-brutal);
+        }
+
+        .transmission-monolith h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .transmission-monolith p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .pipeline-link {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-umber);
+            text-decoration: none;
+            border-bottom: 5px solid var(--text-solid);
+            padding-bottom: 6px;
+            transition: color 0.2s;
+        }
+
+        .pipeline-link:hover {
+            color: var(--text-solid);
+        }
+
+        /* Rigid Double-Border Footer */
+        footer {
+            border-top: 5px double var(--border-heavy);
+            background: var(--bg-container);
+            padding: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-solid);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Fully Fluid Structural Rules */
+        @media (max-width: 992px) {
+            .editorial-hero {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 3rem;
+            }
+            .asymmetric-row, .asymmetric-row.flipped {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                direction: ltr;
+            }
+            .hero-image-frame img, .row-media-box img {
+                height: 380px;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .nav-menu {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .pipeline-link {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="brand-logo">ZR // <span>CREATIVE</span></a>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#perspective">Motto</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#blueprints">Inspirations</a></li>
+                <li><a href="#connect">Freelance</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="master-grid">
+
+        <section id="about" class="editorial-hero">
+            <div class="hero-image-frame">
+                <img src="zenith-photo.jpg" alt="Zenith Rijal Portfolio Shot">
+            </div>
+            <div class="hero-content">
+                <span class="stamp-id">Student & Freelancer Log // Deumai-4, Ilam, Nepal</span>
+                <h1>Zenith Rijal</h1>
+                <p>Hey, I'm Zenith. I am currently a student navigating my Civil Engineering course at Shree Bhanubhakta Secondary School in Deumai-4, Ilam, Nepal.</p>
+                <p>This is my creative platform. While I am firmly grounded in my student journey, I use this space to actively expand my graphic design knowledge and take on freelance projects. I don't claim to be an old industry veteran, but I bring immense focus, energy, and a fresh artistic vision to every commission I tackle.</p>
+                <p>I blend structural precision with raw, alternative design choices to make visual content stand out from the noise.</p>
+                <a href="#connect" class="btn-action">Hire Me for Design</a>
+            </div>
+        </section>
+
+        <section id="perspective" class="tactical-manifesto">
+            <span class="stamp-id" style="color: var(--accent-tan);">My Growth Philosophy</span>
+            <blockquote>"I approach both engineering and the arts with the same mindset: stay curious, keep building, and never stop learning."</blockquote>
+            <p>I am building my skill sets across multiple disciplines. Learning the deliberate execution of structural drawing in the classroom directly translates to how I balance white space, construct typography weights, and design graphic assets for freelance clients.</p>
+        </section>
+
+        <h2 class="section-headline">Projects & Creation Labs</h2>
+
+        <section id="projects" class="asymmetric-row">
+            <div class="row-media-box">
+                <img src="book-cover.jpg" alt="The Diary Written in Someone Else's Blood First Edition Publication">
+            </div>
+            <div class="row-text-packet">
+                <span class="stamp-id">Creative Output // Book Writing</span>
+                <h2>The Diary Written in Someone Else's Blood</h2>
+                <p>This is my debut long-form creative writing project. Authoring this story gave me practical, first-hand experience managing a deep narrative arc, building characters, and managing self-publishing layout structures and book cover asset presentation.</p>
+                <a href="#" class="btn-action">Read Project Specs</a>
+            </div>
+        </section>
+
+        <section class="asymmetric-row flipped">
+            <div class="row-media-box">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800" alt="High Contrast Bold Graphic Element Design">
+            </div>
+            <div class="row-text-packet">
+                <span class="stamp-id">Freelance固定 // Graphic Design & Music Subcultures</span>
+                <h2>Graphic Exploration & Sonic Influence</h2>
+                <p>I am constantly scaling up my graphic design capabilities. A great deal of my visual identity is inspired by my hobby of diving into alternative music subcultures. I study the raw, high-contrast aesthetics and historic album arts of Nu Metal, Thrash Metal, Hard Rock, Glam Metal, and Grunge, injecting that bold energy directly into my freelance layouts.</p>
+                <a href="#" class="btn-action">View Design Samples</a>
+            </div>
+        </section>
+
+        <h2 class="section-headline">The Blueprint Matrix</h2>
+
+        <section id="blueprints" class="audio-blueprint-box">
+            <span class="stamp-id">Acoustic Feed // Hobby & Design Matrix</span>
+            
+            <div class="blueprint-item">
+                <div class="blueprint-title">Nu Metal & Thrash Mechanics</div>
+                <div class="blueprint-label-tag">Rhythm Cadence</div>
+            </div>
+            <div class="blueprint-item">
+                <div class="blueprint-title">Hard Rock, Glam & Grunge History</div>
+                <div class="blueprint-label-tag">Melodic Velocity</div>
+            </div>
+            <div class="blueprint-item">
+                <div class="blueprint-title">Album Cover Design & Visual Layout Asset Creation</div>
+                <div class="blueprint-label-tag">Graphic Hobby</div>
+            </div>
+            <div class="blueprint-item">
+                <div class="blueprint-title">Independent Literature & Conceptual Storytelling Prose</div>
+                <div class="blueprint-label-tag">Creative Writing</div>
+            </div>
+        </section>
+
+        <section id="connect" class="transmission-monolith">
+            <span class="stamp-id">Freelance Intake // Open for Orders</span>
+            <h2>Let's Build Something</h2>
+            <p>I am actively available for custom graphic design assignments, poster layouts, and creative collaborations. If you want to hire me to design assets while I build my profile, swap heavy music album recommendations, or chat about independent book projects—reach out directly!</p>
+            <a href="mailto:zenith_rijal@proton.me" class="pipeline-link">zenith_rijal@proton.me</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Zenith Rijal. Powered by Student Ambition & Design Experiments. Deumai-4, Ilam, Nepal.</p>
+    </footer>
+
+</body>
+</html>
